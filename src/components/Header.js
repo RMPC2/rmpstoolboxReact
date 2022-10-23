@@ -1,28 +1,49 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch, 
-    Route, 
-    Link
-} from "react-router-dom";
+import {BrowserRouter, NavLink, Routes, Route} from "react-router-dom";
+import '../App.css'
+
+
+import Books from './Books'
+import Excercise from './Excercise'
+import Finance from './Finance'
+import Home from './Home'
+import Media from './Media'
+import Music from './Music'
+import Nutrition from './Nutrition'
+import Tech from './Tech'
+
 
 
 function Header() {
-    return (
-    <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="exercise.html">Exercise</a></li>
-        <li><a href="finance.html">Finance</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="nutrition.html">Nutrition</a></li>
-        <li><a href="tech.html">Tech</a></li>
-        <li><a href="media.html">TV & Movies</a></li>
-      </ul>
-    </nav>
-</header>
+  let activeClassName = "nav-active";
+  return (
+    <BrowserRouter>
+      <header>
+        <nav>
+          <ul>
+            <li> <NavLink to="" className={({ isActive }) => isActive ? activeClassName : undefined}>Home</NavLink></li>
+            <li> <NavLink to="books" className={({ isActive }) => isActive ? activeClassName : undefined}>Books</NavLink></li>
+            <li> <NavLink to="excercise" className={({ isActive }) => isActive ? activeClassName : undefined}>Excercise</NavLink></li>
+            <li> <NavLink to="finance" className={({ isActive }) => isActive ? activeClassName : undefined}>Finance</NavLink></li>
+            <li> <NavLink to="music" className={({ isActive }) => isActive ? activeClassName : undefined}>Music</NavLink></li>
+            <li> <NavLink to="nutrition" className={({ isActive }) => isActive ? activeClassName : undefined}>Nutrition</NavLink></li>
+            <li> <NavLink to="tech" className={({ isActive }) => isActive ? activeClassName : undefined}>Tech</NavLink></li>
+            <li> <NavLink to="media" className={({ isActive }) => isActive ? activeClassName : undefined}>TV & Movies</NavLink></li>
+          </ul>
+        </nav>
+      </header>
+      <Routes>
+         <Route path="/" element={<Home/>} />
+         <Route path="/books" element={<Books/>} />
+         <Route path="/excercise" element={<Excercise/>} />
+         <Route path="/finance" element={<Finance/>} />
+         <Route path="/music" element={<Music/>} />
+         <Route path="/nutrition" element={<Nutrition/>} />
+         <Route path="/tech" element={<Tech/>} />
+         <Route path="/media" element={<Media/>} />
+       </Routes>
+    </BrowserRouter>
+   
     );
 }
 
