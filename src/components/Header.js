@@ -21,7 +21,7 @@ function Header() {
       <header>
         <nav>
           <ul>
-            <li> <NavLink to="" className={({ isActive }) => isActive ? activeClassName : undefined}>Home</NavLink></li>
+            <li> <NavLink end to="" className={({ isActive }) => isActive ? activeClassName : undefined}>Home</NavLink></li>
             <li> <NavLink to="books" className={({ isActive }) => isActive ? activeClassName : undefined}>Books</NavLink></li>
             <li> <NavLink to="excercise" className={({ isActive }) => isActive ? activeClassName : undefined}>Excercise</NavLink></li>
             <li> <NavLink to="finance" className={({ isActive }) => isActive ? activeClassName : undefined}>Finance</NavLink></li>
